@@ -24,7 +24,7 @@ puconv.py for puconv in /home/regisb/Documents/projets/puconv
  Login   <berthelot.regis@gmail.com>
  
 Started on  Sat Apr  1 10:30:06 2017 Régis Berthelot
-Last update Sat Apr  1 11:40:26 2017 Régis Berthelot
+Last update Sat Apr  1 11:55:47 2017 Régis Berthelot
 
 """
 
@@ -36,7 +36,7 @@ def     convert_systems(val, unit1, unit2):
     return (val*units[unit1]/units[unit2])
 
 def     help():
-    print ("Pbuconv -- Python Bilateral Unit Convertor")
+    print ("Pbuconv -- Python Bilateral Units Converter")
     print ("Usage: pbuconv [-q --quick [value] [unit1] [unit2]] [-h --help] [-v --version]\n")
     print ("Supported unit: mm, cm, m, km, in, ft and mi.\n")
     print ("Without option, Pbuconv will enter interactive mode.")
@@ -44,7 +44,7 @@ def     help():
     print ("Ex: pbuconv -q 12.3 ft m => Convert 12.3 feet to meters.")
 
 def     version():
-    print ("Pbuconv -- Python Unit Convertor\n  Version: 0.7")
+    print ("Pbuconv -- Python Bilateral Units Converter\n  Version: 0.7")
     print ("  Made by: Régis Berthelot")
     print ("  License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licences/gpl.htlm>")
     print ("  This software is free, and you are welcome to redistribute it under certain contitions.")
