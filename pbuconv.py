@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 #
-#  Pbuconv - Python Biliteral Unit CONVerter
+#  Pbuconv - Python Biliteral Units CONVerter
 #  Copyright (C) 2017 Régis BERTHELOT
 #
 #  This program is free software: you can redistribute it and/or modify
@@ -24,7 +24,7 @@ puconv.py for puconv in /home/regisb/Documents/projets/puconv
  Login   <berthelot.regis@gmail.com>
  
 Started on  Sat Apr  1 10:30:06 2017 Régis Berthelot
-Last update Sat Apr  1 11:55:47 2017 Régis Berthelot
+Last update Sat Apr  1 11:56:48 2017 Régis Berthelot
 
 """
 
