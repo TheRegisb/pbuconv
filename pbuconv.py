@@ -24,7 +24,7 @@ puconv.py for puconv in /home/regisb/Documents/projets/puconv
  Login   <berthelot.regis@gmail.com>
  
 Started on  Sat Apr  1 10:30:06 2017 Régis Berthelot
-Last update Sat Apr  1 11:56:48 2017 Régis Berthelot
+Last update Mon Apr  3 10:32:39 2017 Régis Berthelot
 
 """
 
@@ -44,14 +44,14 @@ def     help():
     print ("Ex: pbuconv -q 12.3 ft m => Convert 12.3 feet to meters.")
 
 def     version():
-    print ("Pbuconv -- Python Bilateral Units Converter\n  Version: 0.7")
+    print ("Pbuconv -- Python Bilateral Units Converter\n  Version: 0.7.1")
     print ("  Made by: Régis Berthelot")
     print ("  License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licences/gpl.htlm>")
     print ("  This software is free, and you are welcome to redistribute it under certain contitions.")
-    print ("  This program comes with ABSOLUTELY NO WARRANT");
+    print ("  This program comes with ABSOLUTELY NO WARRANTY");
 
 def     interactive_mode():
-    value = input("Pbuconv - Version 0.7\nEnter the inital value: ")
+    value = input("Pbuconv - Version 0.7.1\nEnter the inital value: ")
     try:
         float(value)
     except:
