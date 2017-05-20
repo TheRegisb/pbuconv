@@ -24,16 +24,16 @@ puconv.py for puconv in /home/regisb/Documents/projets/puconv
  Login   <berthelot.regis@gmail.com>
  
 Started on  Sat Apr  1 10:30:06 2017 Régis Berthelot
-Last update Mon Apr  3 10:32:39 2017 Régis Berthelot
+Last update Sat May 20 16:07:12 2017 Régis Berthelot
 
 """
 
 from sys import argv
 
-units = {'mm':0.001, 'cm':0.01, 'm': 1.0, 'km':1000, 'in':0.025, 'ft':0.3047, 'mi':1609}
+units = {'mm':0.001, 'cm':0.01, 'm': 1.0, 'km':1000, 'in':0.0254, 'ft':0.3048, 'mi':1609.344}
 
 def     convert_systems(val, unit1, unit2):
-    return (val*units[unit1]/units[unit2])
+    return (val * units[unit1] / units[unit2])
 
 def     help():
     print ("Pbuconv -- Python Bilateral Units Converter")
@@ -44,7 +44,7 @@ def     help():
     print ("Ex: pbuconv -q 12.3 ft m => Convert 12.3 feet to meters.")
 
 def     version():
-    print ("Pbuconv -- Python Bilateral Units Converter\n  Version: 0.7.1")
+    print ("Pbuconv -- Python Bilateral Units Converter\n  Version: 0.9")
     print ("  Made by: Régis Berthelot")
     print ("  License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licences/gpl.htlm>")
     print ("  This software is free, and you are welcome to redistribute it under certain contitions.")

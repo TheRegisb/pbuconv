@@ -25,7 +25,7 @@ or grant yourself the right to use it directly from your shell
 
 ## Usage
 
-Pbuconv support the following units:
+Pbuconv only support yet the following units:
 
 Metrics:  mm, cm, m, km
 
@@ -43,4 +43,4 @@ Non-interactive: Enter all parameters at once
 
 The value have to be a real number, and must belong the supported units.
 
-A -h --help option and -v --version option is provided for recap and extra info
+An -h --help option and -v --version option is provided for recap and extra info
