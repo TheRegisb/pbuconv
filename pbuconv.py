@@ -25,7 +25,7 @@ puconv.py for puconv in /home/regisb/Documents/projets/puconv
  Login   <berthelot.regis@gmail.com>
  
 Started on  Sat Apr  1 10:30:06 2017 Régis Berthelot
-Last update Mon Jul 31 13:17:34 2017 Régis Berthelot
+Last update Mon Jul 31 13:26:23 2017 Régis Berthelot
 
 """
 
@@ -66,14 +66,15 @@ def     interactive_mode():
         exit(1)
     value = float(value)
     unit1 = input("Enter the initial unit: ")
-    if (unit1 not in units):
-        print ("Error: Unknow unit (type -h or --help)")
-        exit(1)
     unit2 = input("Enter targer unit: ")
-    if (unit2 not in units):
-        print ("Error: Unknow unit (type -h or --help)")
-        exit(1)
-    print ("%.4f %s \u2248 %.4f %s" % (round(value, 4), unit1, round(convert_systems(value, unit1, unit2), 4), unit2))
+    cur_sys = ""
+    for i in units_systems:
+        if (unit1 in units_systems[i] and unit2 in units_systems[i]):
+            cur_sys = i
+            break
+    else:
+        print ("Error: Unknow or heterogenous units (type -h or --help)")
+    print ("%.4f %s ~= %.4f %s" % (round(value, 4), unit1, round(cnv_2(value, cur_sys, unit1, unit2), 4), unit2))
 
 def     quick_mode():
     try:
@@ -94,9 +95,6 @@ def     quick_mode():
     else:
         print ("Error: heterogenous or unknow units (type -h or --help)")
         exit(1)
-    # if (argv[3] not in units or argv[4] not in units):
-    #     print ("Error: Unknow unit (type -h or --help")
-    # print ("%.4f %s \u2248 %.4f %s" % (round(float(argv[2]), 4), argv[3], round(convert_systems(float(argv[2]), argv[3], argv[4]), 4), argv[4]))
     print ("%.4f %s ~= %.4f %s" % (round(float(argv[2]), 4), argv[3], cnv_2(round(float(argv[2]), 4), cur_sys, argv[3], argv[4]), argv[4]))
 
 
