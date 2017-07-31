@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# coding: utf-8
 #
 #  Pbuconv - Python Biliteral Units CONVerter
 #  Copyright (C) 2017 Régis BERTHELOT
@@ -24,13 +25,19 @@ puconv.py for puconv in /home/regisb/Documents/projets/puconv
  Login   <berthelot.regis@gmail.com>
  
 Started on  Sat Apr  1 10:30:06 2017 Régis Berthelot
-Last update Sat May 20 16:07:12 2017 Régis Berthelot
+Last update Mon Jul 31 13:17:34 2017 Régis Berthelot
 
 """
 
 from sys import argv
 
-units = {'mm':0.001, 'cm':0.01, 'm': 1.0, 'km':1000, 'in':0.0254, 'ft':0.3048, 'mi':1609.344}
+units_systems = {
+    'length': {'mm':0.001, 'cm':0.01, 'm': 1.0, 'km': 1000, 'in':0.0254, 'ft':0.3048, 'mi':1609.344},
+    'mass': {'t': 1000.0, 'kg': 1.0, 'g': 0.001, 'lb': 0.45360, 'oz': 0.02834952},
+}
+
+def     cnv_2(val, cur_sys, unit1, unit2):
+    return (val * units_systems[cur_sys][unit1] / units_systems[cur_sys][unit2])
 
 def     convert_systems(val, unit1, unit2):
     return (val * units[unit1] / units[unit2])
@@ -48,7 +55,7 @@ def     version():
     print ("  Made by: Régis Berthelot")
     print ("  License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licences/gpl.htlm>")
     print ("  This software is free, and you are welcome to redistribute it under certain contitions.")
-    print ("  This program comes with ABSOLUTELY NO WARRANTY");
+    print ("  This program comes with ABSOLUTELY NO WARRANTY")
 
 def     interactive_mode():
     value = input("Pbuconv - Version 0.7.1\nEnter the inital value: ")
@@ -79,10 +86,18 @@ def     quick_mode():
     except IndexError:
         print ("Error: One or two units are missing.")
         exit(1)
-    if (argv[3] not in units or argv[4] not in units):
-        print ("Error: Unknow unit (type -h or --help")
+    cur_sys = ""
+    for i in units_systems:
+        if (argv[3] in units_systems[i] and argv[4] in units_systems[i]):
+            cur_sys = i
+            break
     else:
-        print ("%.4f %s \u2248 %.4f %s" % (round(float(argv[2]), 4), argv[3], round(convert_systems(float(argv[2]), argv[3], argv[4]), 4), argv[4]))
+        print ("Error: heterogenous or unknow units (type -h or --help)")
+        exit(1)
+    # if (argv[3] not in units or argv[4] not in units):
+    #     print ("Error: Unknow unit (type -h or --help")
+    # print ("%.4f %s \u2248 %.4f %s" % (round(float(argv[2]), 4), argv[3], round(convert_systems(float(argv[2]), argv[3], argv[4]), 4), argv[4]))
+    print ("%.4f %s ~= %.4f %s" % (round(float(argv[2]), 4), argv[3], cnv_2(round(float(argv[2]), 4), cur_sys, argv[3], argv[4]), argv[4]))
 
 
 def     main():
@@ -95,4 +110,5 @@ def     main():
     else:
         quick_mode()
 
-main()
+if __name__ == '__main__':
+    main()
