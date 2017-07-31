@@ -15,7 +15,7 @@ or for Archlinux related OS:
 
 `sudo pacman -S install python3`
 
-Then order to use Pbuconv, use the explicit python3 interpreter
+Then in order to use Pbuconv, use the explicit python3 interpreter
 
 `python3 ~/-path-/pbuconv.py`
 
@@ -27,9 +27,8 @@ or grant yourself the right to use it directly from your shell
 
 Pbuconv only support yet the following units:
 
-Metrics:  mm, cm, m, km
-
-EN/US: in, ft, mi
+Length: mm, cm, m, km, in, ft, mi.
+Weight: g, kg, t, oz, lb.
 
 Pbuconv provide two types of interaction: Interactive and non-interactive
 
