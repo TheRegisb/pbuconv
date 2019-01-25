@@ -18,18 +18,8 @@
 #  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 
-"""
-puconv.py for puconv in /home/regisb/Documents/projets/puconv
- 
- Made by Régis Berthelot
- Login   <berthelot.regis@gmail.com>
- 
-Started on  Sat Apr  1 10:30:06 2017 Régis Berthelot
-Last update Mon Jul 31 13:39:29 2017 Régis Berthelot
-
-"""
-
 from sys import argv
+from sys import stderr
 
 units_systems = {
     'length': {'mm':0.001, 'cm':0.01, 'm': 1.0, 'km': 1000.0, 'in':0.0254, 'ft':0.3048, 'mi':1609.344},
